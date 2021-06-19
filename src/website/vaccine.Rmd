@@ -1,0 +1,340 @@
+---
+title: "從PTT看疫情爆發前後大眾對疫苗的看法"
+author: "林子茹、黃建智、許祐璿、郭容羽"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+<style type="text/css">
+body{ /* Normal  */
+      font-size: 16px;
+  }
+</style>
+<br> 
+
+--------------------
+
+### 研究動機
+<br>
+近期疫情升溫，疫苗的話題層出不窮，無論是新聞、報章雜誌，及網路上的各種討論皆隨時可見。
+
+因此，我們好奇大眾對**「疫苗」**的**「情緒、態度」**究竟為何，以及疫情發生前後的轉變。
+
+期望能藉由網頁的分享，反映民眾對疫苗的心聲。
+<br> 
+
+----------------------
+
+### 資料來源
+<br>
+我們選擇討論度高且使用者較為廣泛的**Ptt八卦版**作為資料來源，並運用爬蟲擷取其所有**標題包含「疫苗」**的文章及下方的討論串。
+
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./2.png")
+```
+<div class="col-md-6">
+<br>
+<br>
+我們以確診人數作為分類標準：
+
+> 疫情爆發前：5/1~12 
+<br>
+> 疫情爆發後：5/13~31
+
+以5/12確診人數開始有成長的這天作為切點，分別進行分析及比較。
+<br>
+<br>
+</div>
+
+----------------------------
+
+### 研究分析
+
+<br>
+<div class="col-md-12">
+#### **討論度比較**
+
+-----------------------------
+</div>
+<div class="col-md-6">
+<br>
+
+| **疫情爆發前文章數**| **疫情爆發後文章數** |   
+|:-------------------:|:--------------------:|
+|         405篇       |         7170篇       | 
+
+<br>
+</div> 
+
+<div class="col-md-6">
+<br>
+
+從所網路爬蟲所截取的文章數可初步了解:
+<br>
+<br>
+疫情爆發前**疫苗相關的討論度**遠不如疫情爆發後的狀況。
+<br>
+<br>
+<br>
+
+
+</div>
+
+<div class="col-md-12">
+
+#### **文字雲比較** 
+
+-------------------------
+</div>
+
+<div class="col-md-6">
+
+**疫情爆發前**
+
+</div>
+
+<div class="col-md-6">
+
+**疫情爆發後** 
+
+</div>
+
+<div class="col-md-6">
+
+<br>
+```{r, out.width = "450px", echo=FALSE}
+knitr::include_graphics("./5_1to5_12wordscloud.png")
+```
+</div>
+
+<div class="col-md-6">
+
+```{r, out.width = "450px", echo=FALSE}
+knitr::include_graphics("./all after.png")
+```
+
+</div> 
+
+<div class="col-md-12">
+
+觀察文字雲可看到，疫情爆發前，疫苗的**「副作用」**詞頻比例高，顯示疫情大規模擴散前，副作用為民眾討論核心之一；但反觀疫情爆發後，民眾討論核心轉為關注如**「國產疫苗」**、**「BNT疫苗」**、**「AZ疫苗」**各式疫苗，且**「採購」**及**「買」**也成為討論度高的詞彙，**「施打」**及**「接種」**亦為大眾所關注的焦點，反倒**副作用**相關討論減少，可從以上觀察大致推測出，民眾在疫情爆發後，更在乎的是「打不打得到疫苗」，再加上時事新聞也常在報導台灣所擁有疫苗數量目前不足的消息，因此，可發現疫情爆發後，民眾開始討論起**國產疫苗**，且討論頻率高，與疫情爆發前呈現強烈對比。
+<br>
+</div> 
+<br>
+<div class="col-md-12">
+
+#### **情緒分析**
+
+_____________________________
+
+**1. 折線圖**
+
+<br>
+<div class="col-md-6">
+**疫情爆發前**
+
+</div>
+
+<div class="col-md-6">
+
+**疫情爆發後** 
+
+</div>
+<div class="col-md-6">
+```{r, out.width = "450px", echo=FALSE}
+knitr::include_graphics("./Rplot05.png")
+```
+
+</div>
+<br>
+<br>
+<div class="col-md-6">
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("./1.png")
+```
+
+</div>
+</div>
+<br>
+<br>
+<div class="col-md-6">
+<br>
+我們觀察疫情前後的折線圖，分析民眾負面情緒的高峰值：
+
+> 疫情爆發前：5/3
+<br>
+>疫情爆發後：5/26
+
+並藉由文字雲去探究及推測在這兩天中，民眾負面情緒高漲的來源，在疫情爆發前，可發現負面詞彙大多和疫情直接相關，如：隔離、肺炎等，而實際探究當天發生的事件後，得知5/3當天政府開始實施**1至3類公費對象的「同住者」開放施打疫苗**政策，可能是因為關於此事件的討論較多，其中又帶有許多疫情相關詞彙，因而導致負面情緒較高。較為特別的是，疫情爆發後的高峰值，文字雲中負面詞彙的比例相對不高，反而出現較多專有名詞，如：民進黨、蔡英文、BNT、AZ、中國等，推估出這些詞彙也許是民眾不滿情緒的起源，但此估計仍過於武斷，是否為真，尚須更進一步探討。
+
+</div>
+
+<div class="col-md-6">
+
+<ul class="nav nav-tabs">
+<li><a data-toggle="tab" href="#before-wordcloud">疫情爆發前文字雲</a></li>
+<li><a data-toggle="tab" href="#after-wordcloud">疫情爆發後文字雲</a></li>
+</ul>
+
+<div class="tab-content">
+<div id="before-wordcloud" class="tab-pane fade in active">
+<br>
+<br>
+<br>
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("./wordcloud5_3.png")
+```
+</div>
+<br>
+<div id="after-wordcloud" class="tab-pane fade">
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("./May26peak.png")
+```
+</div>
+</div>
+<br>
+<br>
+
+</div>
+<br>
+<br>
+<br>
+
+**2. 長條圖**
+
+<br>
+
+
+<div class="col-md-6">
+**疫情爆發前**
+
+</div>
+
+<div class="col-md-6">
+
+**疫情爆發後** 
+
+</div>
+<div class="col-md-6">
+```{r, out.width = "500px", echo=FALSE}
+knitr::include_graphics("./5_1-5_12.png")
+```
+
+</div><div class="col-md-6">
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./~531.png")
+```
+
+</div>
+<div class="col-md-12">
+針對長條圖，我們利用**corpus**個別分析詞彙之間的關係，以下依疫情爆發前後個別擷取部分資料探討：
+<br>
+<br>
+**疫情爆發前**
+</div>
+<br>
+<br>
+<div class="col-md-12">
+<ul class="nav nav-tabs">
+<li><a data-toggle="tab" href="#before1">副作用</a></li>
+<li><a data-toggle="tab" href="#before2">感染</a></li>
+<li><a data-toggle="tab" href="#before3">自由</a></li>
+<li><a data-toggle="tab" href="#before4">嚴重</a></li>
+</ul>
+
+<div class="tab-content">
+<div id="before1" class="tab-pane fade in active">
+```{r, out.width = "900px", echo=FALSE}
+knitr::include_graphics("./before1.png")
+```
+</div>
+<div id="before2" class="tab-pane fade">
+```{r, out.width = "900px", echo=FALSE}
+knitr::include_graphics("./before2.png")
+```
+</div>
+<div id="before3" class="tab-pane fade">
+```{r, out.width = "900px", echo=FALSE}
+knitr::include_graphics("./before3.png")
+```
+</div>
+<div id="before4" class="tab-pane fade">
+```{r, out.width = "900px", echo=FALSE}
+knitr::include_graphics("./before4.png")
+```
+</div>
+</div>
+</div>
+<br>
+<br>
+<div class="col-md-12">
+<br>
+從**「副作用」**一詞可發現，大部分民眾在討論的為**疫苗的副作用**，其中又以**AZ疫苗血栓**的副作用談及最多，可發現疫情爆發前，民眾較擔心疫苗的施打是否會帶來嚴重副作用。而**「感染」**多形容**感染源不明**，可推測應該是當時5/11及12出現幾例感染源不明的案例，使民眾較為擔心，但其中也可發現，在疫情大爆發前，仍有民眾覺得**「打疫苗的風險勝過感染」**。關於**「自由」**這個詞彙，除了談及民主自由外，更多是**自由時報**的署名；**「嚴重」**相關的討論，除了提及疫情嚴重之外，亦有更多是形容**施打疫苗的嚴重副作用**及**嚴重過敏反應**。從上述幾個詞彙，可大致推估當時民眾更擔心的是疫苗相關副作用。
+<br>
+<br>
+</div>
+
+<div class="col-md-12">
+**疫情爆發後**
+</div>
+<div class="col-md-12">
+<ul class="nav nav-tabs">
+<li><a data-toggle="tab" href="#after1">問題</a></li>
+<li><a data-toggle="tab" href="#after2">安全</a></li>
+<li><a data-toggle="tab" href="#after3">希望</a></li>
+<li><a data-toggle="tab" href="#after4">取得</a></li>
+</ul>
+
+<div class="tab-content">
+<div id="after1" class="tab-pane fade in active">
+```{r, out.width = "900px", echo=FALSE}
+knitr::include_graphics("./after1.png")
+```
+</div>
+<div id="after2" class="tab-pane fade">
+```{r, out.width = "900px", echo=FALSE}
+knitr::include_graphics("./after2.jpg")
+```
+</div>
+<div id="after3" class="tab-pane fade">
+```{r, out.width = "900px", echo=FALSE}
+knitr::include_graphics("./after3.jpg")
+```
+</div>
+<div id="after4" class="tab-pane fade">
+```{r, out.width = "900px", echo=FALSE}
+knitr::include_graphics("./after.4.jpg")
+```
+</div>
+</div>
+
+<br>
+觀察**『問題」**一詞，許多是談論**國產疫苗的問題**，可呼應前面文字雲分析的部分，國產疫苗討論度上升。關於**「安全」**的討論，主要是和**疫苗及藥物安全性**相關，告知民眾疫苗安全無虞，以撫平民眾不安的心情；**「希望」**則大部分是和**希望購得疫苗**有關，而**「取得」**也大多是提及**取得疫苗緊急授權**的內容，可觀察出疫情爆發後，台灣疫苗不足的問題，且民眾對於副作用無過多的討論，亦可推出民眾更在乎疫苗是否足夠，是否能打得到。
+<br>
+<br>
+
+----------------------------
+
+### 總結
+<br>
+根據上述的觀察與分析，我們可以總結出，無論疫情爆發前後，民眾的負面情緒皆大於正面。對於疫苗的討論度也是在疫情爆發後有顯著增加，民眾對疫苗的態度也從擔心「副作用」，轉為「害怕打不到」。
+<br>
+<br>
+這次的報告在情緒分析上面有些限制，由於我們是以中文詞典直接進行分析，無法看出每一個詞彙實際要表達的意思，才會發生「自由」被列為正面情緒，但其實是「自由時報」的狀況。雖然情緒分析尚不夠精確，但我們相信民眾對疫情及疫苗的擔憂確實存在，期許疫情趨緩、疫苗足夠這天能儘速來臨。
+
+<br>
+
+----------------------------
+
+### 附註
+<br>
+疫情前後的製圖為不同人負責，由於環境設定不相同，因此折線圖和長條圖positive與negative顏色及左右位置相反，需特別注意。
+<br>
+<br>
+
+-----------------------------
+
+
+
