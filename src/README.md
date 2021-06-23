@@ -13,3 +13,4 @@
   * ch.senti.lex.csv : 情緒詞典
   * dic2.txt : 自定義辭典
   * stop2.txt: 停用詞   
+* 爬蟲/ : 5/01-5/12 ptt爬蟲程式碼
