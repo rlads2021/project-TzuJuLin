@@ -14,8 +14,7 @@ G07 Sasuke的水獺
 
 ## 連結
 
-- [投影片]()
-- [書面報告]()  
+- [書面報告](./G25_report.pdf)  
 - [專案網站](https://kerikuo-otter.github.io/vaccine1/vaccine.html)
 
 
